@@ -1,0 +1,22 @@
+---
+# tasks/main.yml - remove_environment
+- name: Remove required packages
+  package:
+    name:
+      - apache2
+      - mysql-server
+      - git
+      - php
+    state: absent
+
+- name: Stop apache2 service
+  service:
+    name: apache2
+    state: stopped
+    enabled: false
+
+- name: Stop mysql service
+  service:
+    name: mysql
+    state: stopped
+    enabled: false

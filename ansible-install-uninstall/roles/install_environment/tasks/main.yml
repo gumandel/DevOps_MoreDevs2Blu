@@ -1,0 +1,22 @@
+---
+# tasks/main.yml - install_environment
+- name: Install required packages
+  package:
+    name:
+      - apache2
+      - mysql-server
+      - git
+      - php
+    state: present
+
+- name: Ensure apache2 is running
+  service:
+    name: apache2
+    state: started
+    enabled: true
+
+- name: Ensure mysql is running
+  service:
+    name: mysql-server
+    state: started
+    enabled: true
