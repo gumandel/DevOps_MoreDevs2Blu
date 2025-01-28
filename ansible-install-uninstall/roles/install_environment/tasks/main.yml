@@ -1,6 +1,9 @@
 ---
 # tasks/main.yml - install_environment
 - name: Install required packages
+  become: true
+  become_method: sudo
+  become_user: root
   package:
     name:
       - apache2
@@ -17,6 +20,6 @@
 
 - name: Ensure mysql is running
   service:
-    name: mysql-server
+    name: mysql
     state: started
     enabled: true
