@@ -10,7 +10,7 @@ Obs: a instalação e remoção dos pacotes foi realizada em uma máquina Ubuntu
 
 - Instalar **SSH** e **Python** em suas máquinas-alvo;
 
-- No arquivo **inventory.yml**, localizado na pasta **ansible-install-uninstall**, é necessario alterar o endereco de IP para a máquina de destino, onde os arquivos **.yaml** de instalacão e desinstalacão serão executados;
+- No arquivo **inventory.yml**, localizado na pasta **ansible-install-uninstall**, é necessário alterar o endereco de IP para a máquina de destino, onde os arquivos **.yaml** de instalacão e desinstalacão serão executados;
 
 - É possível replicar esse processo para mais máquinas, basta copiar o bloco compreendido entre o endereco de IP e "docker_host" e colar logo abaixo dele, alterando para o IP do alvo desejado.
 
@@ -20,7 +20,7 @@ Obs: a instalação e remoção dos pacotes foi realizada em uma máquina Ubuntu
 
 sudo ansible-playbook -i inventory.yml site.yml -K --tags install
 
-- Ao passar o parâmetro -K, seraá solicitada a senha do usuário atual, que deverá ter permissões de sudo (arquivo sudoers);
+- Ao passar o parâmetro -K, será solicitada a senha do usuário atual, que deverá ter permissões de sudo (arquivo sudoers);
 
 ### Para remover o ambiente, utilize o comando anterior com 'uninstall' no lugar de 'install':
 
