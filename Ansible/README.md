@@ -1,27 +1,27 @@
-### Execucao dos playbooks ###
+# Execução dos playbooks #
 
-- A execucao dos comandos abaixo faz a instalacao ou remocao dos pacotes apache, mysql, git e php na maquina de destino, realizado por meio de roles contendo tasks separadas para cada processo. A ferramenta de automacao responsavel por esse gerenciamento e configuracao e o Ansible.
+- A execução dos comandos abaixo faz a instalação ou remoção dos pacotes Apache, MySQL, Git e PHP na máquina de destino, realizada por meio de roles contendo tasks separadas para cada processo. A ferramenta de automação responsável por esse gerenciamento e configuração é o Ansible.
 
-Obs: a instalacao e remocao dos pacotes foi realizada em uma maquina Ubuntu 22.04. Dependendo da distribuicao escolhida, os nomes dos pacotes podem ser diferentes.
+Obs: a instalação e remoção dos pacotes foi realizada em uma máquina Ubuntu *22.04*. Dependendo da distribuição escolhida, os nomes dos pacotes podem ser diferentes.
 
-## Pre-requisitos ##
+## Pré-requisitos ##
 
-- Instalar o Ansible na sua maquina principal;
+- Instalar o *Ansible* na sua máquina principal;
 
-- Instalar SSH e Python em suas maquinas alvos;
+- Instalar *SSH* e *Python* em suas máquinas-alvo;
 
-- No arquivo inventory.yml, localizado na pasta ansible-install-uninstall, e necessario alterar o endereco de IP para a maquina de destino, onde os arquivos .yaml de instalacao e desinstalacao serao executados;
+- No arquivo *inventory.yml*, localizado na pasta *ansible-install-uninstall*, é necessario alterar o endereco de IP para a máquina de destino, onde os arquivos *.yaml* de instalacão e desinstalacão serão executados;
 
-- E possivel replicar esse processo para mais maquinas, basta copiar o bloco compreendido entre o endereco de IP e "docker_host" e colar logo abaixo dele, alterando para o IP para o alvo desejado.
+- É possível replicar esse processo para mais máquinas, basta copiar o bloco compreendido entre o endereco de IP e "docker_host" e colar logo abaixo dele, alterando para o IP do alvo desejado.
 
-## Criacao e destruicao do ambiente  ##
+## Criação e destruição do ambiente  ##
 
-# Para instalar o ambiente, navegue ate a pasta "ansible-install-uninstall" e execute o seguinte comando:
+### Para instalar o ambiente, navegue até a pasta "ansible-install-uninstall" e execute o seguinte comando:
 
 sudo ansible-playbook -i inventory.yml site.yml -K --tags install
 
-- Ao passar o parametro -K, sera solicitada a senha do usuario atual, que devera ter permissoes de usuarios sudo (arquivo sudoers);
+- Ao passar o parâmetro -K, seraá solicitada a senha do usuário atual, que deverá ter permissões de sudo (arquivo sudoers);
 
-# Para remover o ambiente, utilize o comando anterior com 'uninstall' no lugar de 'install':
+### Para remover o ambiente, utilize o comando anterior com 'uninstall' no lugar de 'install':
 
 sudo ansible-playbook -i inventory.yml site.yml -K --tags uninstall
