@@ -1,7 +1,0 @@
----
-- name: Manage services
-  hosts: all
-  become: true
-  roles:
-    - { role: install_environment, tags: install }
-    - { role: remove_environment, tags: uninstall }
