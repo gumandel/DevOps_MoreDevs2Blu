@@ -1,0 +1,6 @@
+apt install docker.io (ambas as VMs)
+systemctl start docker.service (ambas as VMs)
+docker swarm init (VM 1)
+docker swarm join --token SWMTKN-1-4b0jif20xhpkmblqxp4dgo8hhy12mly7b0mxotizgs455j5jto-8oyksgifk4sy8z1tj8ywe3l7o 192.168.0.35:2377
+(VM 2)
+docker node ls (VM1)

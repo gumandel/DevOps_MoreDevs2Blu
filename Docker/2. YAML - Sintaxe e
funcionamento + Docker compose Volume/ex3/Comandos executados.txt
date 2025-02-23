@@ -1,0 +1,17 @@
+touch Dockerfile
+vim Dockerfile
+
+## Adicionado conteúdo, para conferir basta acessar o arquivo Dockerfile nesta mesma pasta
+
+touch docker-compose.yaml
+vim docker-compose.yaml
+
+## Mesmo esquema do Dockerfile, o YAML pode ser encontrado nesta pasta também
+
+docker-compose -f docker-compose.yaml up -d
+
+## Acessar o IP do host via navegador na porta 80 e acrescentando o /index.html ao final do
+## endereço, mostrando assim a mensagem "Bem vindo ao servidor HTTPD!" esperada no exercício
+
+
+

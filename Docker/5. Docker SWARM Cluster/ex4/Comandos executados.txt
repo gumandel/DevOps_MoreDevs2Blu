@@ -1,0 +1,3 @@
+systemctl start docker.service (VM 2)
+docker node ls (VM 1)
+docker node promote Debian2 (VM 1)

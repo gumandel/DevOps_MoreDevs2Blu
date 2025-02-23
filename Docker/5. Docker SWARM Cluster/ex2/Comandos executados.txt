@@ -1,0 +1,8 @@
+docker node ls (VM 1)
+docker node promote Debian2 (VM 1)
+docker node ls (VM 1)
+
+# A VM 2 deve estar com o "Manager status" como
+# "Reachable, indicando que está apta a assumir
+# o estado de "Leader" caso o original saia ou
+# passe por problemas.

@@ -1,0 +1,10 @@
+touch docker-compose.yaml
+vim docker-compose.yaml
+
+## Criado o docker-compose.yaml
+
+docker-compose -f docker-compose.yaml -p exercicio1 up -d
+docker volume ls
+docker volume inspect exercicio1_var_html
+docker-compose -f docker-compose.yaml -p exercicio1 down
+docker volume prune
