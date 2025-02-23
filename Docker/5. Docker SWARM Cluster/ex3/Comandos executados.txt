@@ -1,0 +1,5 @@
+systemctl poweroff (VM 2)
+docker node ls (VM 1)
+
+## A VM 1 está com o Manager Status como "Leader", enquanto a VM 2
+## está como "Unreachable"

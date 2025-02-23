@@ -1,0 +1,16 @@
+vim docker-compose.yaml
+
+## Alterado .yaml conforme o que está disponível nesta pasta
+
+cd /tmp/
+cat > index.html <<EOF
+Brave new world
+EOF
+
+cd ~/Aula2_3_4_Exercicios/
+docker-compose -f docker-compose.yaml -p ex2 up -d
+
+## Acessado via navegador o endereço de IP da VM que estava executando o container, porta 80, e o conteúdo "Brave new world" foi exposto
+
+docker-compose -f docker-compose.yaml -p ex2 down -d
+docker ps

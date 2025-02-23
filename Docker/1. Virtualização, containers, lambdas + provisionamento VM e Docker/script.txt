@@ -1,0 +1,10 @@
+## Criação da mensagem inserida em handler.py e criação do Dockerfile
+
+echo "print('Hello World')" > handler.py
+cat > Dockerfile <<EOF
+FROM python:3.11-slim
+RUN apt-get update
+CMD python /var/temp/handler.py
+EOF
+docker build -t teste .
+docker run -v $(pwd):/var/temp teste
